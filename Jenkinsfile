@@ -70,6 +70,22 @@ pipeline {
                 }
             }
         }
+
+        stage('Push Updated deployment file to GitHub') {
+            steps {
+                script {
+                sh """
+                    git config --global.name "edwin"
+                    git config --global.email "edswin@gmail.com"
+                    git add deployment.yaml
+                    git commit -m "push updated deployment.yaml" 
+                """
+                withCredentials([gitUsernamePassword(credentialsId: 'Github', gitToolName: 'Default')]) {
+                    sh "git push https://github.com/saeedalig/gitops-argocd.git"     
+                    }
+                }
+            }
+        }
     }
 }
 
