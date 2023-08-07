@@ -75,8 +75,8 @@ pipeline {
             steps {
                 script {
                 sh """
-                    git config --global.name "edwin"
-                    git config --global.email "edswin@gmail.com"
+                    git config --global user.name "edwin"
+                    git config --global user.email "edswin@gmail.com"
                     git add deployment.yaml
                     git commit -m "push updated deployment.yaml" 
                 """
