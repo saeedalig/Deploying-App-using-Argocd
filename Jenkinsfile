@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     git credentialsId: "Github",
-                        url: "https://github.com/saeedalig/gitops-argocd.git",
+                        url: "https://github.com/saeedalig/Deploying-App-using-Argocd.git",
                         branch: "main"
                 }
             }
