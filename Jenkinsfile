@@ -4,7 +4,7 @@ pipeline {
     environment {
 
         DOCKERHUB_USERNAME = "asa96"
-        APP_NAME = "gitops_argocd_app"
+        APP_NAME = "${JOB_NAME}"
         IMAGE_TAG = "${BUILD_NUMBER}"
         IMAGE_NAME = "${DOCKERHUB_USERNAME}" + "/" + "${APP_NAME}"
         REGISTRY_CREDS = "dockerHub"
