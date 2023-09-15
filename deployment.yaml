@@ -13,10 +13,6 @@ spec:
     spec:
       containers:
       - name: flask-app-container
-        image: asa96/gitops_argocd_app:25
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
+        image: asa96/argocd-project:v1
         ports:
         - containerPort: 5000
